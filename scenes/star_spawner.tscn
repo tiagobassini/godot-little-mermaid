@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/ring_spawner.gd" type="Script" id=1]
+[ext_resource path="res://scenes/star.tscn" type="PackedScene" id=2]
+
+[node name="RingSpawner" type="Position2D"]
+position = Vector2( 432, 0 )
+script = ExtResource( 1 )
+ring_scene = ExtResource( 2 )
+spawn_cooldown = 1.5
+ring_speed = 60
+ring_min_position = 20
+ring_max_position = 320
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]

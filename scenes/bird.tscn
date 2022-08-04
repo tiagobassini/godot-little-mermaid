@@ -1,0 +1,60 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scripts/bird.gd" type="Script" id=1]
+[ext_resource path="res://assets/player/ariel-nadando_1.png" type="Texture" id=2]
+[ext_resource path="res://scenes/sfx.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/player/ariel-nadando_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/ariel-nadando_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/player/ariel-nadando_4.png" type="Texture" id=6]
+[ext_resource path="res://assets/player/ariel-nadando_5.png" type="Texture" id=7]
+[ext_resource path="res://assets/player/ariel-nadando_7.png" type="Texture" id=8]
+[ext_resource path="res://assets/player/ariel-nadando_6.png" type="Texture" id=9]
+[ext_resource path="res://assets/player/ariel-nadando_8.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "fly",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "hit",
+"speed": 9.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 9.49997
+height = 22.0001
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 13.0
+height = 24.0
+
+[node name="Bird" type="KinematicBody2D"]
+script = ExtResource( 1 )
+sfx_scene = ExtResource( 3 )
+gravity_speed = 600
+jump_speed = -150
+
+[node name="Texture" type="AnimatedSprite" parent="."]
+rotation = -0.174533
+frames = SubResource( 6 )
+animation = "fly"
+frame = 7
+playing = true
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 3.5, -0.5 )
+rotation = 1.5708
+shape = SubResource( 7 )
+
+[node name="DamageArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2( 2, 1 )
+rotation = 1.5708
+shape = SubResource( 8 )
+
+[connection signal="body_entered" from="DamageArea" to="." method="on_body_entered"]
