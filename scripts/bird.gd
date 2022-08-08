@@ -38,11 +38,11 @@ func start() -> void:
 
 
 func on_body_entered(body: Object) -> void:
-	if body.name != "Bird" && body.name!= "Sky":
+	if body.name != "Bird" && body.name!= "Sky" && can_interact:
 		velocity.x=0
-		can_interact=false
 		spawn_sfx("res://assets/sfx/hit.ogg")
 		animation.play("hit")
+		can_interact=false
 		emit_signal("game_over")
 	
 

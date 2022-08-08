@@ -52,7 +52,9 @@ _global_script_class_icons={
 
 config/name="Pequena Sereia"
 run/main_scene="res://scenes/main.tscn"
+boot_splash/image="res://icon.png"
 config/icon="res://icon.png"
+config/macos_native_icon="res://icon.png"
 
 [display]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/gui/message.png" type="Texture" id=1]
+[ext_resource path="res://assets/gui/menu.png" type="Texture" id=1]
 [ext_resource path="res://assets/gui/gameover.png" type="Texture" id=2]
 [ext_resource path="res://assets/font/flappy_bird_font.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://scripts/interface.gd" type="Script" id=4]
@@ -105,10 +105,11 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Text" type="Label" parent="ScoreContainer"]
-margin_right = 120.0
-margin_bottom = 60.0
+margin_top = 15.0
+margin_right = 126.0
+margin_bottom = 124.0
 rect_min_size = Vector2( 120, 60 )
-rect_scale = Vector2( 0.6, 0.6 )
+rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/font = SubResource( 1 )
 text = "0"
 align = 1

@@ -33,13 +33,11 @@ height = 38.3333
 extents = Vector2( 23, 17.3333 )
 
 [node name="Enemy" type="Node2D"]
-scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
 
 [node name="Texture" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "attack"
-frame = 9
+frame = 1
 playing = true
 
 [node name="DamageArea" type="StaticBody2D" parent="."]

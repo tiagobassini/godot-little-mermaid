@@ -7,6 +7,8 @@ export(int) var walk_speed
 onready var damage_area: StaticBody2D = get_node("DamageArea")
 onready var animation: AnimatedSprite = get_node("Texture")
 
+func _ready():
+	animation.play("default")
 
 func _physics_process(delta: float) -> void:
 	position.x -= delta * walk_speed

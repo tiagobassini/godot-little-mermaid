@@ -45,4 +45,5 @@ func game_over() -> void :
 func spawn_sfx(effect: String) -> void:
 	var sfx: SoundEffect = sfx_scene.instance() 
 	sfx.stream = load(effect)
+	sfx.volume_db = -10
 	get_tree().root.call_deferred("add_child", sfx)

@@ -55,6 +55,7 @@ shape = SubResource( 2 )
 
 [node name="Sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = -15.0
 
 [connection signal="pressed" from="Interface/ButtonContainer/Button" to="Bird" method="button_pressed"]
 [connection signal="finished" from="Sfx" to="." method="sfx_finished"]
